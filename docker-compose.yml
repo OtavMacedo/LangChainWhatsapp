@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    networks:
+      - evolution-net
+  api:
+    container_name: evolution_api
+    image: evoapicloud/evolution-api:v2.3.7
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - evolution_instances:/evolution/instances
+    networks:
+      - evolution-net
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: typebot
+      POSTGRES_DB: evolution_db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - evolution-net
+
+volumes:
+  evolution_instances:
+  pg_data:
+
+networks:
+  evolution-net:
+    driver: bridge
