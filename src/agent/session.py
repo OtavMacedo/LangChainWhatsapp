@@ -12,4 +12,19 @@ class Session:
     objective: Optional[str] = None
     experience: Optional[str] = None
     finished: bool = False
-    step: Literal['name', 'age', 'weight_kg', 'height_cm', 'objective', 'experience', 'finishing'] = 'name'
+    step: Literal[
+        'ask_name',
+        'get_name',
+        'ask_age',
+        'get_age',
+        'ask_weight',
+        'get_weight',
+        'ask_height',
+        'get_height',
+        'ask_objective',
+        'get_objective',
+        'ask_experience',
+        'get_experience',
+        'send_instruction',
+        'finished'
+    ] = 'name'
