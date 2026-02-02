@@ -1,16 +1,6 @@
-import asyncio
+from fastapi import FastAPI
 
-from dotenv import load_dotenv
+from src.api.webhook import router
 
-from agent.flow import test_extractions
-
-
-
-load_dotenv()
-
-async def main():
-    await test_extractions()
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
+app = FastAPI()
+app.include_router(router)
