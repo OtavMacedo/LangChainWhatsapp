@@ -6,6 +6,8 @@ services:
       - 8000:8000
     networks:
       - evolution-net
+    env_file:
+      - .env
   api:
     container_name: evolution_api
     image: evoapicloud/evolution-api:v2.3.7
