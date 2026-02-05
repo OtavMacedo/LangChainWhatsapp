@@ -3,9 +3,15 @@ from typing import Optional, TypeVar, Type
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 
-from agent.model import get_model
-from agent.prompts import GET_AGE_PROMPT, GET_EXPERIENCE_PROMPT, GET_HEIGHT_PROMPT, GET_NAME_PROMPT, GET_OBJECTIVE_PROMPT, GET_WEIGHT_PROMPT
-from src.agent.outputs import ExtractAgeOutput, ExtractExperienceOutput, ExtractHeightOutput, ExtractNameOutput, ExtractObjectiveOutput, ExtractWeightOutput
+from src.agent.model import get_model
+from src.agent.prompts import (
+    GET_AGE_PROMPT, GET_EXPERIENCE_PROMPT, GET_HEIGHT_PROMPT,
+    GET_NAME_PROMPT, GET_OBJECTIVE_PROMPT, GET_WEIGHT_PROMPT,
+)
+from src.agent.outputs import (
+    ExtractAgeOutput, ExtractExperienceOutput, ExtractHeightOutput,
+    ExtractNameOutput, ExtractObjectiveOutput, ExtractWeightOutput,
+)
 
 T = TypeVar('T', bound=BaseModel)
 

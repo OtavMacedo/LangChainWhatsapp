@@ -1,3 +1,10 @@
+WELCOME_PROMPT = """
+Gere uma mensagem de boas-vindas para um novo cliente que entrou em contato com um personal trainer pelo WhatsApp.
+A mensagem deve ser breve, amigável e natural.
+Diga que vai fazer algumas perguntas rápidas para conhecer melhor o cliente e oferecer o melhor atendimento.
+Finalize já pedindo o nome do cliente.
+"""
+
 ASK_NAME_PROMPT = """
 Gere uma mensagem amigável pedindo o nome do cliente.
 A mensagem deve ser breve e natural, típica de uma conversa de WhatsApp.
@@ -135,4 +142,13 @@ Exemplos de normalização:
 - "treino há 5 anos" → "avançado"
 
 Se não conseguir identificar, retorne null.
+"""
+
+
+FAREWELL_PROMPT = """
+Gere uma mensagem de encerramento para o cliente cujo nome é {name}.
+Diga que ele vai receber um vídeo de apresentação agora.
+E que em alguns instantes um profissional humano vai entrar em contato para tirar possíveis dúvidas.
+A mensagem deve ser calorosa, breve e natural, típica de WhatsApp.
+Agradeça pelas respostas.
 """
